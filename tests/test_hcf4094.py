@@ -42,7 +42,6 @@ def slow_hcf(mocker):
     return hcf_capture, hcf, callback
 
 
-@pytest.mark.slow
 def test_slow_hcf(slow_hcf):
     hcf_capture, hcf, callback = slow_hcf
     # Get time to see if we slowed

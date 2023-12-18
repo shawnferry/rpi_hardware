@@ -27,7 +27,6 @@ def get_time():
     return float(time.time())
 
 
-@pytest.mark.slow
 def test_cached_with_immediate():
     time_a = get_time()  # Should be current
     time_b = get_time()  # Should be cached time_a

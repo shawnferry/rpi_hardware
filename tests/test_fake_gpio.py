@@ -1,4 +1,5 @@
-import mock
+import unittest.mock
+from unittest.mock import Mock
 import pytest
 
 from rpi_hardware.mocked import GPIO
@@ -100,7 +101,7 @@ def test_output(bcm):
 
 
 def test_rising_callback(board):
-    func = mock.Mock()
+    func = Mock()
     GPIO.setup(38, GPIO.OUT, initial=GPIO.LOW)
     GPIO.add_event_callback(38, GPIO.RISING, func)
     GPIO.output(38, GPIO.HIGH)
@@ -108,7 +109,7 @@ def test_rising_callback(board):
 
 
 def test_falling_callback(bcm):
-    func = mock.Mock()
+    func = Mock()
     GPIO.setup(6, GPIO.OUT, initial=GPIO.HIGH)
     GPIO.add_event_callback(6, GPIO.FALLING, func)
     GPIO.output(6, GPIO.LOW)
